@@ -55,7 +55,7 @@ public:
         cout << "The God dealt damage of " << damage << " to Lumine" << endl;
         health = health - damage;
 
-        if (health < 0)
+        if (health <= 0)
         {
             cout << "----------------------------------------------------" << endl;
             cout << "Lumine has died!!...   You Lost your brother!!!\n\n";
@@ -120,7 +120,7 @@ public:
         cout << "Lumine dealt damage of " << damage << " to The God" << endl;
         health = health - damage;
 
-        if (health < 0)
+        if (health <= 0)
         {
             cout << "----------------------------------------------------" << endl;
             cout << "Congratulation's you have defeated The God of Heavenly Principles and freed your Brother...\n\n";
