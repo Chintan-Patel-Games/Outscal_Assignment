@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// Assignment - 12 : Spwan your first Enemy!
+
 void GameStory()
 {
     cout << "---------------------------------------------------------------------------------\n";
@@ -95,7 +97,7 @@ private:
 public:
     Enemy()
     {
-        cout << "\nOutlander! You're Journey ends here." << endl;
+        cout << "\nOutlanders! You're Journey ends here." << endl;
         cout << "I, the Sustainer of Heavenly Principles, has been waiting for this moment for so long. You are about to face the same fate as your older brother.\n\n" << endl;
     }
 
