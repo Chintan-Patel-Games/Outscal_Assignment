@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -22,8 +23,8 @@ class Player
 private:
     int health = 100;
 
-    int max_attack = 30;
-    int min_attack = 20;
+    int max_damage = 30;
+    int min_damage = 20;
 
     int max_healing = 15;
     int min_healing = 8;
@@ -38,7 +39,7 @@ public:
 
         cout << "Lumine's Health: " << health << endl;
         cout << "----------------------------------" << endl;
-        cout << "Lumine's Attack range is between: " << min_attack << " - " << max_attack << endl;
+        cout << "Lumine's Attack range is between: " << min_damage << " - " << max_damage << endl;
         cout << "----------------------------------" << endl;
         cout << "Lumine's Healing range is between: " << min_healing << " - " << max_healing << endl;
     }
@@ -63,19 +64,22 @@ public:
         }
     }
 
-    int GiveDamage(int attack)
+    int GiveDamage()
     {
         cout << "Lumine is about to attack the God of Heavenly Principles" << endl;
-        int enemyHealth = enemyHealth - attack;
-        cout << "The God of Heavenly Principles has taken damage of " << attack << endl;
-        return enemyHealth;
+        srand(time(0));
+        int randDamage = (rand() % (max_damage - min_damage + 1) + min_damage);
+        cout << "The God of Heavenly Principles has taken damage of " << randDamage << endl;
+        return randDamage;
     }
 
-    void Heal(int healing)
+    void Heal()
     {
+        srand(time(0));
+        int randHeal = (rand() % (max_healing - min_healing + 1) + min_healing);
         cout << "Lumine picked up a potion and drank it" << endl;
-        cout << "Lumine is healing..." << endl;
-        health = health + healing;
+        cout << "Lumine healed with HP of " << randHeal << endl;
+        health += randHeal;
         cout << "Lumine's health after healing is : " << health << endl;
     }
 };
