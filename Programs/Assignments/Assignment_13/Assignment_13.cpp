@@ -51,16 +51,18 @@ public:
 
     void TakeDamage(int damage)
     {
-        if (health > 0) // Player is Alive
+        cout << "Oh no, Lumine got hit by the God of Heavenly Principles" << endl;
+        cout << "The God dealt damage of " << damage << " to Lumine" << endl;
+        health = health - damage;
+
+        if (health < 0)
         {
-            cout << "Oh no, Lumine got hit by the God of Heavenly Principles" << endl;
-            cout << "The God dealt damage of " << damage << endl;
-            health = health - damage;
-            cout << "Lumine's current health after receiving damage is : " << health << endl;
+            cout << "----------------------------------------------------" << endl;
+            cout << "Lumine has died!!...   You Lost your brother!!!\n\n";
         }
         else
         {
-            cout << "Lumine has died!!..." << endl;
+            cout << "Lumine's current health after receiving damage is : " << health << endl;
         }
     }
 
@@ -75,12 +77,19 @@ public:
 
     void Heal()
     {
-        srand(time(0));
-        int randHeal = (rand() % (max_healing - min_healing + 1) + min_healing);
-        cout << "Lumine picked up a potion and drank it" << endl;
-        cout << "Lumine has healed with HP of " << randHeal << endl;
-        health += randHeal;
-        cout << "Lumine's health after healing is : " << health << endl;
+        if (health >= 100)
+        {
+            cout << "Lumine doesn't need any Heal! She is at full health..." << endl;
+        }
+        else
+        {
+            srand(time(0));
+            int randHeal = (rand() % (max_healing - min_healing + 1) + min_healing);
+            cout << "Lumine picked up a potion and drank it" << endl;
+            cout << "Lumine has healed with HP of " << randHeal << endl;
+            health += randHeal;
+            cout << "Lumine's health after healing is : " << health << endl;
+        }
     }
 };
 
@@ -96,7 +105,8 @@ public:
     Enemy()
     {
         cout << "\nOutlander! You're Journey ends here." << endl;
-        cout << "I, the Sustainer of Heavenly Principles, has been waiting for this moment for so long. You are about to face the same fate as your older brother.\n\n" << endl;
+        cout << "I, the Sustainer of Heavenly Principles, has been waiting for this moment for so long. You are about to face the same fate as your older brother.\n\n"
+             << endl;
     }
 
     int GetHealth()
@@ -106,16 +116,18 @@ public:
 
     void TakeDamage(int damage)
     {
-        if (health > 0) // Player is Alive
+        cout << "Yes! The God of Heavenly Principles got hit from Lumine..." << endl;
+        cout << "Lumine dealt damage of " << damage << " to The God" << endl;
+        health = health - damage;
+
+        if (health < 0)
         {
-            cout << "Yes! The God of Heavenly Principles got hit by Lumine..." << endl;
-            cout << "Lumine dealt damage of " << damage << endl;
-            health = health - damage;
-            cout << "The God's current health after receiving damage is : " << health << endl;
+            cout << "----------------------------------------------------" << endl;
+            cout << "Congratulation's you have defeated The God of Heavenly Principles and freed your Brother...\n\n";
         }
         else
         {
-            cout << "Congratulation's you have defeated The God of Heavenly Principles" << endl;
+            cout << "The God's current health after receiving damage is : " << health << endl;
         }
     }
 
@@ -124,10 +136,43 @@ public:
         cout << "The God of Heavenly Principles is about to attack Lumine..." << endl;
         srand(time(0));
         int randDamage = (rand() % (max_damage - min_damage + 1) + min_damage);
-        cout << "Lumine is performing a hit of " << randDamage << " to the God" <<endl;
+        cout << "The God  is performing a hit of " << randDamage << " to Lumine" << endl;
         return randDamage;
     }
-};  
+};
+
+void GameLoop(Player player, Enemy enemy)
+{
+    char playerChoice;
+    do
+    {
+        cout << "Press A to Attack or H to Heal..." << endl;
+        cin >> playerChoice;
+        cout << "----------------------------------------------------" << endl;
+
+        if (playerChoice == 'A' || playerChoice == 'a')
+        {
+            enemy.TakeDamage(player.GiveDamage());
+
+            if (enemy.GetHealth() > 0)
+            {
+                cout << "----------------------------------------------------" << endl;
+                cout << "God : Hmm, So its my turn now..." << endl;
+                player.TakeDamage(enemy.GiveDamage());
+                cout << "----------------------------------------------------" << endl;
+            }
+        }
+        else if (playerChoice == 'H' || playerChoice == 'h')
+        {
+            player.Heal();
+            cout << "----------------------------------------------------" << endl;
+        }
+        else
+        {
+            cout << "Invalid Input!" << endl;
+        }
+    } while (player.GetHealth() > 0 && enemy.GetHealth() > 0);
+}
 
 int main()
 {
@@ -144,6 +189,7 @@ int main()
         {
             Player playerObj;
             Enemy enemyObj;
+            GameLoop(playerObj, enemyObj);
         }
         else
         {
