@@ -85,7 +85,6 @@ public:
 
 int main()
 {
-    // float force = 50;
     Dragon dragon;
     dragon.AccessSuperPower("Magic");
     dragon.AccessSuperPower("Wind", "North");
