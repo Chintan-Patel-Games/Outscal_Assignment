@@ -4,33 +4,67 @@ using namespace std;
 
 class Player
 {
-    private:
-        int health = 100;
-        int bullets = 30;
+private:
+    int maxHealth = 100;
+    int currentHealth = maxHealth;
+    int bullets = 30;
 
-    public:
-        // void GetHealth()
-        // {
-        //     cout << "Player's current health is : " << health << endl;
-        // }
+public:
+    // void GetHealth()
+    // {
+    //     cout << "Player's current health is : " << health << endl;
+    // }
 
-        void Shoot()
+    void Shoot()
+    {
+        if (bullets == 0)
+        {
+            cout << "You're out of bullets..." << endl;
+        }
+        else
         {
             bullets--;
             cout << "Remaining bullets : " << bullets << endl;
         }
-        // If not returning player health, we could use GetHealth() method
-        int TakeDamage(int damage)
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth > 0)
         {
             cout << "Damage Taken : " << damage << endl;
-            return health -= damage;
+            cout << "Player Health after taking damage : " << currentHealth << endl;
+        }
+        else
+        {
+            cout << "Player Died!!!" << endl;
+        }
+    }
+
+    void ReviveHealth(int heal)
+    {
+        if (currentHealth == maxHealth)
+        {
+            cout << "Player is at max health, you don't need healing." << endl;
         }
 
-        void ReviveHealth(int heal)
+        if (currentHealth > 0)
         {
+            currentHealth += heal;
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
             cout << "Health Restored : " << heal << endl;
-            health += heal;
+            cout << "Player Health after heal : " << currentHealth << endl;
         }
+        else
+        {
+            cout << "Player is dead. You can't heal a dead person!!!" << endl;
+        }
+    }
 };
 
 int main()
@@ -39,7 +73,6 @@ int main()
     player.Shoot();
     player.Shoot();
     player.Shoot();
-    int playerHealth = player.TakeDamage(20);
-    cout << "Player's current health is : " << playerHealth << endl;
+    player.TakeDamage(20);
     player.ReviveHealth(5);
 }
