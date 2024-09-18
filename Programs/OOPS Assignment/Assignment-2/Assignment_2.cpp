@@ -107,6 +107,13 @@ public:
 
     int GetAttack() { return attack; }
     void SetAttack(int _attack) { attack = _attack; }
+
+    void DisplayStats()
+    {
+        cout << " Name : " << GetName() << endl;
+        cout << " Health : " << GetHealth() << endl;
+        cout << " Attack : " << GetAttack() << endl;
+    }
 };
 
 class Tanker : public Player
@@ -123,6 +130,11 @@ public:
 
     int GetDefence() { return defence; }
     void SetDefence(int _defence) { defence = _defence; }
+
+    void DisplayDefence()
+    {
+        cout << " Defence : " << GetDefence() << endl;
+    }
 };
 
 class Attacker : public Player
@@ -149,6 +161,11 @@ public:
 
     int GetHeal() { return heal; }
     void SetHeal(int _heal) { heal = _heal; }
+
+    void DisplayHeal()
+    {
+        cout << " Heal : " << GetHeal() << endl;
+    }
 };
 
 int main()
@@ -163,19 +180,22 @@ int main()
     tanker.SetHealth(525);
     tanker.SetAttack(125);
     tanker.SetDefence(800);
-    cout << " Name : " << tanker.GetName() << endl;
-    cout << " Health : " << tanker.GetHealth() << endl;
-    cout << " Attack : " << tanker.GetAttack() << endl;
-    cout << " Defence : " << tanker.GetDefence() << endl;
+    // cout << " Name : " << tanker.GetName() << endl;
+    // cout << " Health : " << tanker.GetHealth() << endl;
+    // cout << " Attack : " << tanker.GetAttack() << endl;
+    // cout << " Defence : " << tanker.GetDefence() << endl;
+    tanker.DisplayStats();
+    tanker.DisplayDefence();
 
     cout << "----------- Attacker Details ------------- " << endl;
     Attacker attacker;
     attacker.SetName("Soldier 76");
     attacker.SetHealth(325);
     attacker.SetAttack(30);
-    cout << " Name : " << attacker.GetName() << endl;
-    cout << " Health : " << attacker.GetHealth() << endl;
-    cout << " Attack : " << attacker.GetAttack() << endl;
+    // cout << " Name : " << attacker.GetName() << endl;
+    // cout << " Health : " << attacker.GetHealth() << endl;
+    // cout << " Attack : " << attacker.GetAttack() << endl;
+    attacker.DisplayStats();
 
     cout << "----------- Healer Details ------------- " << endl;
     Healer healer;
@@ -183,8 +203,10 @@ int main()
     healer.SetHealth(225);
     healer.SetAttack(100);
     healer.SetHeal(25);
-    cout << " Name : " << healer.GetName() << endl;
-    cout << " Health : " << healer.GetHealth() << endl;
-    cout << " Attack : " << healer.GetAttack() << endl;
-    cout << " Heal : " << healer.GetHeal() << endl;
+    // cout << " Name : " << healer.GetName() << endl;
+    // cout << " Health : " << healer.GetHealth() << endl;
+    // cout << " Attack : " << healer.GetAttack() << endl;
+    // cout << " Heal : " << healer.GetHeal() << endl;
+    healer.DisplayStats();
+    healer.DisplayHeal();
 }
