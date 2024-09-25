@@ -13,6 +13,6 @@ int main()
     short playerCode;
     playerCode = playerHealth;
 
-    cout << "Size of Player Health : " << sizeof(playerHealth) << endl;
-    cout << "Size of Player Code : " << sizeof(playerCode) << endl;
+    cout << "Size of Player Health : " << sizeof(playerHealth) << " bytes" << endl;
+    cout << "Size of Player Code : " << sizeof(playerCode) << " bytes" << endl;
 }

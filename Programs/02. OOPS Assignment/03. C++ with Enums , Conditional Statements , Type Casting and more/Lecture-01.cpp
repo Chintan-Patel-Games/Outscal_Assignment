@@ -115,7 +115,7 @@ protected:
     int shield;
 };
 
-bool GameManager(int playerChoice, Player player, Enemy enemy)
+void GameManager(int playerChoice, Player player, Enemy enemy)
 {
     bool gameOver = false;
 
@@ -155,8 +155,5 @@ int main()
     cout << "Select your hero class between 1-3 : " << endl;
     cin >> playerChoice;
 
-    if (!GameManager(playerChoice, player, enemy))
-    {
-        cout << "Game Over!!!" << endl;
-    }
+    GameManager(playerChoice, player, enemy);
 }
