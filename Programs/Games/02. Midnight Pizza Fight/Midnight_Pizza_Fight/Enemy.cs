@@ -50,5 +50,39 @@ namespace Midnight_Pizza_Fight
             Console.WriteLine("\nCrust Bandit: This delectable pizza is mine now!");
             Console.WriteLine("You'll never catch me, flour face!");
         }
+
+        private int GenerateRandomNumberInRange(int min, int max)
+        {
+            Random rand = new Random();
+            int randomNumber = rand.Next(min, max + 1);
+            return randomNumber;
+        }
+
+        public void TakeDamage(int damageRecieved) => Health -= damageRecieved;
+
+        public int CalculateTotalDamage()
+        {
+            int additionalDamage = GenerateRandomNumberInRange(5, 15);
+            int totalDamage = attackDamage + additionalDamage;
+            return totalDamage;
+        }
+
+        public void ShowAttackDamage(int totalDamage)
+        {
+            Console.WriteLine("             🍕 PIZZA BATTLE 🍕                   ");
+            Console.WriteLine("============================================");
+            Console.WriteLine("Crust Bandit's attack dealt " + totalDamage + " damage! 🥊");
+            Console.WriteLine("--------------------------------------------");
+        }
+
+        public void DisplayEnemyStats()
+        {
+            Console.WriteLine("\n---------------------------------------------------");
+            Console.WriteLine("              CRUST BANDIT'S STATS                ");
+            Console.WriteLine("---------------------------------------------------");
+            Console.WriteLine("Health: " + Health + "/" + maxHealth);
+            Console.WriteLine("Crust Bandit: " + attackDamage);
+            Console.WriteLine("Crust Bandit Boost 🌪️: 5 to 15");
+        }
     }
 }
