@@ -1,2 +1,8 @@
-# Ignores .exe files
+# Ignores .exe files for C++
 *.exe
+
+# Ignores /bin folder for C#
+.bin/
+
+# Ignores /obj folder for C#
+.obj/
