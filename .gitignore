@@ -2,7 +2,7 @@
 *.exe
 
 # Ignores /bin folder for C#
-.bin/
+bin/
 
 # Ignores /obj folder for C#
-.obj/
+obj/
