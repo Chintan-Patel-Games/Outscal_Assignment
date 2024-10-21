@@ -1,18 +1,29 @@
 ﻿using System;
 
-class Midnight_Pizza_Fight
+class Program
 {
+
+    // Assignment : Spawn Characters
+
     static void Main(string[] args)
     {
         Game game = new Game();
         game.DisplayGameStory();
-        Player player = new Player();
-        Enemy enemy= new Enemy();
+        game.SpawnCharacters();
     }
 }
 
 class Game
 {
+    Player player;
+    Enemy enemy;
+    public void SpawnCharacters()
+    {
+        //Initialize Player and Enemy object 
+        player = new Player();
+        enemy = new Enemy();
+    }
+
     public void DisplayGameStory()
     {
         Console.Clear();
