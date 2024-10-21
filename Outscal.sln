@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Programs", "Programs", "{711E2DC9-DA42-4D41-963E-20DEF3EB3314}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. C# Begineer", "03. C# Begineer", "{4C20E1E7-B095-4D7A-9F3B-B27F74E8325B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Beginning with C#", "02. Beginning with C#", "{13D718E0-7349-4EC9-A188-402C36B82F3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Beginning with C#", "Programs\03. C# Begineer\02. Beginning with C#\Assignment-1\02. Beginning with C#.csproj", "{2EDF8718-E79E-4A61-83D2-16457BF9643E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Lore of Midnight Pizza Fight", "03. Lore of Midnight Pizza Fight", "{583A6562-63C2-4F63-AC88-7B8AD89ED9AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Lore of Midnight Pizza Fight", "Programs\03. C# Begineer\03. Lore of Midnight Pizza Fight\Assignment-1\03. Lore of Midnight Pizza Fight.csproj", "{438B2FE9-9784-416D-87E5-EEB955DC589D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Creating the Characters", "04. Creating the Characters", "{D1AA5DED-716B-44BE-BEFC-FEF41164CB1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment-1", "Programs\03. C# Begineer\04. Creating the Characters\Assignment-1\Assignment-1.csproj", "{4351332E-D8AA-4CB0-9C89-6CD0D0412DDC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment-2", "Programs\03. C# Begineer\04. Creating the Characters\Assignment-2\Assignment-2.csproj", "{D28702D5-0BB9-42BD-8094-34A7F403C48E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{588ED10D-05FC-4510-ADBA-11CB7100C72D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Midnight Pizza Fight", "02. Midnight Pizza Fight", "{9DBEC890-C912-434B-8A8C-3B155A1F3BF0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Midnight_Pizza_Fight", "Programs\Games\02. Midnight Pizza Fight\Midnight_Pizza_Fight\Midnight_Pizza_Fight.csproj", "{D8E97D38-A8F0-4197-B597-AD8F95049E1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EDF8718-E79E-4A61-83D2-16457BF9643E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EDF8718-E79E-4A61-83D2-16457BF9643E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EDF8718-E79E-4A61-83D2-16457BF9643E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EDF8718-E79E-4A61-83D2-16457BF9643E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{438B2FE9-9784-416D-87E5-EEB955DC589D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{438B2FE9-9784-416D-87E5-EEB955DC589D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{438B2FE9-9784-416D-87E5-EEB955DC589D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{438B2FE9-9784-416D-87E5-EEB955DC589D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4351332E-D8AA-4CB0-9C89-6CD0D0412DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4351332E-D8AA-4CB0-9C89-6CD0D0412DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4351332E-D8AA-4CB0-9C89-6CD0D0412DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4351332E-D8AA-4CB0-9C89-6CD0D0412DDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D28702D5-0BB9-42BD-8094-34A7F403C48E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D28702D5-0BB9-42BD-8094-34A7F403C48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D28702D5-0BB9-42BD-8094-34A7F403C48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D28702D5-0BB9-42BD-8094-34A7F403C48E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8E97D38-A8F0-4197-B597-AD8F95049E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8E97D38-A8F0-4197-B597-AD8F95049E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8E97D38-A8F0-4197-B597-AD8F95049E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8E97D38-A8F0-4197-B597-AD8F95049E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C20E1E7-B095-4D7A-9F3B-B27F74E8325B} = {711E2DC9-DA42-4D41-963E-20DEF3EB3314}
+		{13D718E0-7349-4EC9-A188-402C36B82F3A} = {4C20E1E7-B095-4D7A-9F3B-B27F74E8325B}
+		{2EDF8718-E79E-4A61-83D2-16457BF9643E} = {13D718E0-7349-4EC9-A188-402C36B82F3A}
+		{583A6562-63C2-4F63-AC88-7B8AD89ED9AC} = {4C20E1E7-B095-4D7A-9F3B-B27F74E8325B}
+		{438B2FE9-9784-416D-87E5-EEB955DC589D} = {583A6562-63C2-4F63-AC88-7B8AD89ED9AC}
+		{D1AA5DED-716B-44BE-BEFC-FEF41164CB1D} = {4C20E1E7-B095-4D7A-9F3B-B27F74E8325B}
+		{4351332E-D8AA-4CB0-9C89-6CD0D0412DDC} = {D1AA5DED-716B-44BE-BEFC-FEF41164CB1D}
+		{D28702D5-0BB9-42BD-8094-34A7F403C48E} = {D1AA5DED-716B-44BE-BEFC-FEF41164CB1D}
+		{588ED10D-05FC-4510-ADBA-11CB7100C72D} = {711E2DC9-DA42-4D41-963E-20DEF3EB3314}
+		{9DBEC890-C912-434B-8A8C-3B155A1F3BF0} = {588ED10D-05FC-4510-ADBA-11CB7100C72D}
+		{D8E97D38-A8F0-4197-B597-AD8F95049E1D} = {9DBEC890-C912-434B-8A8C-3B155A1F3BF0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E074B33F-479D-47CE-BF8C-0627C423CE1B}
+	EndGlobalSection
+EndGlobal
