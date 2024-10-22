@@ -7,8 +7,7 @@ namespace Midnight_Pizza_Fight
         static void Main(string[] args)
         {
             Game game = new Game();
-            game.DisplayGameStory();
-            game.SpawnCharacters();
+            game.GameLoop();
         }
     }
 }

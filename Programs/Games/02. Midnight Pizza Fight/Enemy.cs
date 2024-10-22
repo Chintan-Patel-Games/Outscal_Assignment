@@ -12,10 +12,7 @@ namespace Midnight_Pizza_Fight
         public int Health
         {
             //GETTER
-            get
-            {
-                return health;
-            }
+            get { return health; }
             //SETTER
             private set
             {
@@ -39,6 +36,7 @@ namespace Midnight_Pizza_Fight
         public Enemy()
         {
             SpawnEnemy();
+            DisplayEnemyStats();
         }
 
         //Function
@@ -49,6 +47,16 @@ namespace Midnight_Pizza_Fight
             Console.WriteLine("==================================================\n");
             Console.WriteLine("\nCrust Bandit: This delectable pizza is mine now!");
             Console.WriteLine("You'll never catch me, flour face!");
+        }
+
+        public void DisplayEnemyStats()
+        {
+            Console.WriteLine("\n---------------------------------------------------");
+            Console.WriteLine("              CRUST BANDIT'S STATS                ");
+            Console.WriteLine("---------------------------------------------------");
+            Console.WriteLine("Health: " + Health + "/" + maxHealth);
+            Console.WriteLine("Crust Bandit: " + attackDamage);
+            Console.WriteLine("Crust Bandit Boost 🌪️: 5 to 15");
         }
 
         private int GenerateRandomNumberInRange(int min, int max)
@@ -73,16 +81,6 @@ namespace Midnight_Pizza_Fight
             Console.WriteLine("============================================");
             Console.WriteLine("Crust Bandit's attack dealt " + totalDamage + " damage! 🥊");
             Console.WriteLine("--------------------------------------------");
-        }
-
-        public void DisplayEnemyStats()
-        {
-            Console.WriteLine("\n---------------------------------------------------");
-            Console.WriteLine("              CRUST BANDIT'S STATS                ");
-            Console.WriteLine("---------------------------------------------------");
-            Console.WriteLine("Health: " + Health + "/" + maxHealth);
-            Console.WriteLine("Crust Bandit: " + attackDamage);
-            Console.WriteLine("Crust Bandit Boost 🌪️: 5 to 15");
         }
     }
 }

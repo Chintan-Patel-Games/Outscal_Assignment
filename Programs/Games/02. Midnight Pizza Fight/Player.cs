@@ -13,10 +13,7 @@ namespace Midnight_Pizza_Fight
         public int Health
         {
             //GETTER
-            get
-            {
-                return health;
-            }
+            get { return health; }
             //SETTER
             private set
             {
@@ -40,6 +37,7 @@ namespace Midnight_Pizza_Fight
         public Player()
         {
             SpawnPlayer();
+            DisplayPlayerStats();
         }
 
         //Function
@@ -51,13 +49,25 @@ namespace Midnight_Pizza_Fight
             Console.WriteLine("\nDough Master: That scoundrel won't escape with my creation!");
         }
 
+        public void DisplayPlayerStats()
+        {
+            Console.WriteLine("\n---------------------------------------------------");
+            Console.WriteLine("              DOUGH MASTER'S STATS                ");
+            Console.WriteLine("---------------------------------------------------");
+            Console.WriteLine("Health: " + Health + "/" + maxHealth);
+            Console.WriteLine("Dough Slapper: " + attackDamage);
+            Console.WriteLine("Espresso Shot ☕: " + healingCapacity);
+            Console.WriteLine("Dough Slapper Boost 🌪️: 5 to 15");
+            Console.WriteLine("Espresso Shot Boost ☕: 10 to 20");
+        }
+
         private int GenerateRandomNumberInRange(int min, int max)
         {
             Random rand = new Random();
             int randomNumber = rand.Next(min, max + 1);
             return randomNumber;
         }
-        
+
         public void TakeDamage(int damageRecieved) => Health -= damageRecieved;
 
         public int CalculateTotalDamage()
@@ -101,18 +111,6 @@ namespace Midnight_Pizza_Fight
                 Console.WriteLine("Dough Master's heal restored " + healAmount + " hp! ☕");
                 Console.WriteLine("--------------------------------------------");
             }
-        }
-
-        public void DisplayPlayerStats()
-        {
-            Console.WriteLine("\n---------------------------------------------------");
-            Console.WriteLine("              DOUGH MASTER'S STATS                ");
-            Console.WriteLine("---------------------------------------------------");
-            Console.WriteLine("Health: " + Health + "/" + maxHealth);
-            Console.WriteLine("Dough Slapper: " + attackDamage);
-            Console.WriteLine("Espresso Shot ☕: " + healingCapacity);
-            Console.WriteLine("Dough Slapper Boost 🌪️: 5 to 15");
-            Console.WriteLine("Espresso Shot Boost ☕: 10 to 20");
         }
     }
 }
