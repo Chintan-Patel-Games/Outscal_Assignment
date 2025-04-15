@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Assignment - 1 : Stack using Array
+
 template <typename T>
 class Stack {
 private:
