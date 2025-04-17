@@ -2,6 +2,8 @@
 #include <queue>
 #include <vector>
 
+// Assignmnet - 1 : Students unable to eat lunch
+
 using namespace std;
 
 int countStudents(vector<int>& students, vector<int>& sandwiches) {
