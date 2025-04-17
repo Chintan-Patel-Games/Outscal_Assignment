@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stack>
 
+// Assignment - 2 : Queue using Stack
+
 template <typename T>
 class Queue {
 private:
