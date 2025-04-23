@@ -1,14 +1,17 @@
 #include <iostream>
 using namespace std;
 
-struct Node {
+struct Node
+{
     int data;
     Node* next;
-    
-    Node(int val) : data(val), next(nullptr) {}
+
+    Node() : data(0), next(nullptr) {} // default constructor
+    Node(int val) : data(val), next(nullptr) {} // parameterized constructor
 };
 
-class CircularLinkedList {
+class CircularLinkedList
+{
 private:
     Node* head_node;
 public:
@@ -25,11 +28,13 @@ public:
     void reverse();
 };
 
-void CircularLinkedList::insertAtEnd(int value) {
+void CircularLinkedList::insertAtEnd(int value)
+{
     Node* newNode = new Node(value);
-    if (!head_node) {
+    if (!head_node)
+    {
         head_node = newNode;
-        newNode->next = head_node;
+        newNode->next = head_node; // Bcoz its Circular LinkedList
         return;
     }
     Node* temp = head_node;
@@ -39,11 +44,13 @@ void CircularLinkedList::insertAtEnd(int value) {
     newNode->next = head_node;
 }
 
-void CircularLinkedList::insertAtBeginning(int value) {
+void CircularLinkedList::insertAtBeginning(int value)
+{
     Node* newNode = new Node(value);
-    if (!head_node) {
+    if (!head_node)
+    {
         head_node = newNode;
-        newNode->next = head_node;
+        newNode->next = head_node; // Again Bcoz its Circular LinkedList
         return;
     }
     Node* temp = head_node;
@@ -54,9 +61,11 @@ void CircularLinkedList::insertAtBeginning(int value) {
     head_node = newNode;
 }
 
-void CircularLinkedList::deleteFromEnd() {
+void CircularLinkedList::deleteFromEnd()
+{
     if (!head_node) return;
-    if (head_node->next == head_node) {
+    if (head_node->next == head_node)
+    {
         delete head_node;
         head_node = nullptr;
         return;
@@ -68,9 +77,11 @@ void CircularLinkedList::deleteFromEnd() {
     temp->next = head_node;
 }
 
-void CircularLinkedList::deleteFromBeginning() {
+void CircularLinkedList::deleteFromBeginning()
+{
     if (!head_node) return;
-    if (head_node->next == head_node) {
+    if (head_node->next == head_node)
+    {
         delete head_node;
         head_node = nullptr;
         return;
@@ -84,32 +95,44 @@ void CircularLinkedList::deleteFromBeginning() {
     delete toDelete;
 }
 
-void CircularLinkedList::traverse() {
-    if (!head_node) {
+void CircularLinkedList::traverse()
+{
+    if (!head_node)
+    {
         cout << "List is empty" << endl;
         return;
     }
     Node* temp = head_node;
-    do {
+    do
+    {
         cout << temp->data << " -> ";
         temp = temp->next;
     } while (temp != head_node);
     cout << "(head)" << endl;
 }
 
-void CircularLinkedList::findTheMiddle() {
+void CircularLinkedList::findTheMiddle()
+{
     if (!head_node) return;
     Node* slow = head_node;
     Node* fast = head_node;
-    while (fast->next != head_node && fast->next->next != head_node) {
+    while (fast->next != head_node && fast->next->next != head_node)
+    {
         slow = slow->next;
         fast = fast->next->next;
     }
     cout << "Middle Element: " << slow->data << endl;
 }
 
-void CircularLinkedList::insertAtIndex(int index, int value) {
-    if (index == 0) {
+void CircularLinkedList::insertAtIndex(int index, int value)
+{
+    if (index < 0)
+    {
+        cout << "Incorrect index." << endl;
+        return;
+    }
+    if (index == 0)
+    {
         insertAtBeginning(value);
         return;
     }
@@ -122,8 +145,14 @@ void CircularLinkedList::insertAtIndex(int index, int value) {
 }
 
 void CircularLinkedList::deleteFromIndex(int index) {
+    if (index < 0)
+    {
+        cout << "Incorrect index." << endl;
+        return;
+    }
     if (!head_node) return;
-    if (index == 0) {
+    if (index == 0)
+    {
         deleteFromBeginning();
         return;
     }
@@ -135,13 +164,15 @@ void CircularLinkedList::deleteFromIndex(int index) {
     delete toDelete;
 }
 
-void CircularLinkedList::reverse() {
+void CircularLinkedList::reverse()
+{
     if (!head_node || head_node->next == head_node) return;
     Node* prev = nullptr;
     Node* current = head_node;
     Node* next = nullptr;
     Node* last = head_node;
-    do {
+    do
+    {
         next = current->next;
         current->next = prev;
         prev = current;
@@ -151,7 +182,8 @@ void CircularLinkedList::reverse() {
     head_node = prev;
 }
 
-int main() {
+int main()
+{
     CircularLinkedList cll;
     cll.insertAtEnd(1);
     cll.insertAtEnd(2);
